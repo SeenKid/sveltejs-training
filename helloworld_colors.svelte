@@ -18,7 +18,7 @@
 <input type="checkbox" name="upper" id="upper" bind:checked={isUpper}/> Uppercase
 
 <h1 style="color:{color}">
-	{upper}
+	{isUpper ? upper.toUpperCase() : upper}
 </h1>
 
 <p>
