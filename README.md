@@ -115,7 +115,7 @@ use the component :
 
 ---
 
-## ***COURS DU 30.01.2023***
+## ***COURS DU 30.01.2023*** 
 
 notes anexes : petite feuille #1
 
