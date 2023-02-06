@@ -115,7 +115,7 @@ use the component :
 
 ---
 
-## ***COURS DU 30.01.2023*** 
+## ***COURS DU 30.01.2023***
 
 notes anexes : petite feuille #1
 
@@ -128,12 +128,13 @@ javascript
     let i = 0;
     function incrementCounter() {
         ++i;
-        console.log({i});
+        console.log("la valeur du compteur est de : " + i);
     }
 ```
 html
 ```html
 <br/>
+
 <h1> Compteur de clicks </h1>
 
 <button on:click={incrementCounter}>Cliquez</button>
@@ -162,6 +163,28 @@ p {
     font-size: 40px;
 }
 </style>
+```
+
+> if / else with svelte
+
+```js
+	{#if} 
+	<h1> hello world </h1>
+	{:else}
+	<h1> hellou werld </h1>
+	{/if}
+```
+
+> exemple >
+
+JAVSCRIPT 
+
+```js
+{#if size > 0} // size is a variable defined higher in the page.
+	// some html code
+{:else}
+	// another html code
+{/if }
 ```
 
 ---
