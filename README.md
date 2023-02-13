@@ -189,3 +189,52 @@ JAVSCRIPT
 
 ---
 
+## COURS DU 13.02.2023
+
+ - +page.svelte - shop
+```js
+<script>
+    export let data;
+    const { products, users } = data;
+    console.log(users);
+</script>
+
+<h1>Mes produits</h1>
+{#each products as product}
+     <h2><a href="/shop/{product.id}">{product.title}</a></h2>
+     <p>{product.description}</p>
+     <p>{product.price} CHF</p>
+{/each}
+
+<h1>Mes utilisateurs</h1>
+{#each users as user}
+     <h2>{user.firstName} {user.lastName}</h2>
+     <p>{user.email}</p>
+{/each}
+```
+
+- +page.js - shop
+```js
+export async function load({fetch}) {
+    const fetchProducts = async () => {
+        const res = await fetch('https://dummyjson.com/products?limit=10');
+        const productsData = await res.json();
+        return productsData.products  
+    }
+    const fetchUsers = async () => {
+        const res = await fetch('https://dummyjson.com/users?limit=10');
+        const usersData = await res.json();
+        return usersData.users   
+    }
+
+    return {
+        products : fetchProducts(),
+        users : fetchUsers()
+    }
+}
+```
+
+
+
+
+
